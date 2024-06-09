@@ -9,7 +9,26 @@
     @vite('resources/js/app.js')
 </head>
 <body>
-    <img src="{{ Vite::asset('resources/img/1.webp') }}" alt="">
-    <h1>Hello World!</h1>
+    @include('partials.header')
+    <div class="container">
+        @yield('content')
+    </div>
+
+    <nav class="d-flex justify-content-center">
+        <div class="width d-flex flex-wrap">
+            @foreach($products['products'] as $product)
+            <div class="image-wrapper">
+                <img src="{{ Vite::asset('resources/img/' . $product['frontImage']) }}" alt="Image {{ $product['id'] }}">
+                <div class="image-overlay d-flex justify-content-center align-items-center">
+                    <img src="{{ Vite::asset('resources/img/' . $product['backImage']) }}" alt="Back Image {{ $product['id'] }}">
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </nav>
+
+    @include('partials.footer')
+    <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
+
