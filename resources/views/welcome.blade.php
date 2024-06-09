@@ -22,6 +22,14 @@
                 <div class="image-overlay d-flex justify-content-center align-items-center">
                     <img src="{{ Vite::asset('resources/img/' . $product['backImage']) }}" alt="Back Image {{ $product['id'] }}">
                 </div>
+                <div class="">
+                    @foreach($product['badges'] as $badge)
+                        <span class="color-value">{{ $badge['value'] }}</span>
+                    @endforeach
+                </div>
+                <span>{{ $product['brand'] }}</span>
+                <h4>{{ $product['name'] }}</h4>
+                <span class="color-price">{{ $product['price'] }} €</span>
             </div>
             @endforeach
         </div>
@@ -31,4 +39,3 @@
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
-

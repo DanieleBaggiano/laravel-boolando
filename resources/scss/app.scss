@@ -1,8 +1,12 @@
 @import "~bootstrap/scss/bootstrap";
 
-.bg-color {
+.bg-orange {
     background-color: rgb(255 105 0);
     height: 50px;
+}
+
+.logo {
+    width: max-content;
 }
 
 .width {
@@ -43,4 +47,18 @@
     width: 80%;
     height: auto;
     transform: rotateY(180deg);
+}
+
+.color-value {
+    background-color: rgb(255 0 0);
+}
+
+.color-price {
+    color: rgb(255 0 0);
+}
+
+.bg-black {
+    background-color: black;
+    height: 50px;
+    margin-top: 40px;
 }
